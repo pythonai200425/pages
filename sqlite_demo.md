@@ -47,12 +47,6 @@ INSERT INTO COMPANY VALUES (7, 'James', 24, 'Houston', 10000.00 );
 SELECT * FROM COMPANY;
 ```
 
-```
-1 | Paul  | 32 | California | 20000.00
-2 | Allen | 25 | Texas      | 15000.00
-...
-```
-
 ```sql
 -- Return the highest age in the table
 SELECT MAX(AGE) FROM COMPANY;
