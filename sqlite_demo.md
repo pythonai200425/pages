@@ -40,7 +40,7 @@ VALUES (6, 'Kim', 22, 'South-Hall', 45000.00 );
 INSERT INTO COMPANY VALUES (7, 'James', 24, 'Houston', 10000.00 );
 ```
 
-## SELECT בסיסי
+## ה- SELECT הבסיסי
 
 ```sql
 -- Show all rows and columns from the table
