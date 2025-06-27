@@ -2,13 +2,12 @@
 
 <div dir="rtl" style="text-align: right">
 
-
 ---
 
 ## יצירת טבלה – CREATE TABLE
 
 ```sql
--- יצירת טבלה עם שדות לעובדים: מזהה, שם, גיל, כתובת ומשכורת
+-- Create a table with fields: ID, name, age, address, and salary
 CREATE TABLE COMPANY(
   ID INT PRIMARY KEY NOT NULL,
   NAME TEXT NOT NULL,
@@ -23,7 +22,7 @@ CREATE TABLE COMPANY(
 ## הכנסת נתונים – INSERT INTO
 
 ```sql
--- הוספת עובדים שונים עם גיל, כתובת ומשכורת
+-- Insert employees with age, address, and salary
 INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
 VALUES (1, 'Paul', 32, 'California', 20000.00 );
 
@@ -50,7 +49,7 @@ INSERT INTO COMPANY VALUES (7, 'James', 24, 'Houston', 10000.00 );
 ## SELECT בסיסי
 
 ```sql
--- מציג את כל השורות והעמודות מהטבלה
+-- Show all rows and columns from the table
 SELECT * FROM COMPANY;
 ```
 
@@ -61,21 +60,21 @@ SELECT * FROM COMPANY;
 ```
 
 ```sql
--- מחזיר את הגיל הכי גבוה בטבלה
+-- Return the highest age in the table
 SELECT MAX(AGE) FROM COMPANY;
--- פלט: 32
+-- Output: 32
 ```
 
 ```sql
--- מחזיר את הגיל הכי נמוך בטבלה
+-- Return the lowest age in the table
 SELECT MIN(AGE) FROM COMPANY;
--- פלט: 22
+-- Output: 22
 ```
 
 ```sql
--- מחשב את ממוצע הגילאים
+-- Calculate the average age
 SELECT AVG(AGE) FROM COMPANY;
--- פלט: 25.43
+-- Output: 25.43
 ```
 
 ---
@@ -83,13 +82,13 @@ SELECT AVG(AGE) FROM COMPANY;
 ## ביטויים מתמטיים ופונקציות
 
 ```sql
-SELECT 1;                    -- פלט: 1
-SELECT 5 + 3;                -- פלט: 8
-SELECT 1.0 / 100;            -- פלט: 0.01
-SELECT pow(2, 5);            -- פלט: 32
-SELECT sqrt(49);             -- פלט: 7
-SELECT ABS(-15);             -- פלט: 15
-SELECT ROUND(3.14159, 2);    -- פלט: 3.14
+SELECT 1;                    -- Output: 1
+SELECT 5 + 3;                -- Output: 8
+SELECT 1.0 / 100;            -- Output: 0.01
+SELECT pow(2, 5);            -- Output: 32
+SELECT sqrt(49);             -- Output: 7
+SELECT ABS(-15);             -- Output: 15
+SELECT ROUND(3.14159, 2);    -- Output: 3.14
 ```
 
 ---
@@ -97,11 +96,11 @@ SELECT ROUND(3.14159, 2);    -- פלט: 3.14
 ## תאריכים ושעה
 
 ```sql
-SELECT CURRENT_DATE;                      -- פלט: 2025-06-27
-SELECT CURRENT_TIME;                      -- פלט: 14:52:03
-SELECT CURRENT_TIMESTAMP;                 -- פלט: 2025-06-27 14:52:03
-SELECT datetime('now', 'localtime');      -- פלט: 2025-06-27 17:52:03
-SELECT strftime('%Y', 'now');             -- פלט: 2025
+SELECT CURRENT_DATE;                      -- Output: 2025-06-27
+SELECT CURRENT_TIME;                      -- Output: 14:52:03
+SELECT CURRENT_TIMESTAMP;                 -- Output: 2025-06-27 14:52:03
+SELECT datetime('now', 'localtime');      -- Output: 2025-06-27 17:52:03
+SELECT strftime('%Y', 'now');             -- Output: 2025
 ```
 
 ---
@@ -109,28 +108,28 @@ SELECT strftime('%Y', 'now');             -- פלט: 2025
 ## סינון עם WHERE, IN, LIKE, BETWEEN
 
 ```sql
--- כל העובדים שהשכר שלהם גבוה מ־4500
+-- Employees with salary greater than 4500
 SELECT * FROM COMPANY WHERE SALARY > 4500;
 
--- כל העובדים שגילם גדול מ־25
+-- Employees older than 25
 SELECT * FROM COMPANY WHERE AGE > 25;
 
--- כל העובדים שהכתובת שלהם היא Texas בדיוק
+-- Employees whose address is exactly 'Texas'
 SELECT * FROM COMPANY WHERE ADDRESS = 'Texas';
 
--- כל העובדים ששמם הוא Kim
+-- Employees named 'Kim'
 SELECT * FROM COMPANY WHERE NAME = 'Kim';
 
--- עובדים שגרים בטקסס ומרוויחים יותר מ־50,000
+-- Employees from Texas who earn more than 50,000
 SELECT * FROM COMPANY WHERE ADDRESS = 'Texas' AND SALARY > 50000;
 
--- עובדים שכתובתם או Texas או Norway
+-- Employees whose address is either Texas or Norway
 SELECT * FROM COMPANY WHERE ADDRESS IN ('Texas', 'Norway');
 
--- עובדים ששמם כולל את האות a (בכל מקום בשם)
+-- Employees whose name contains the letter 'a'
 SELECT * FROM COMPANY WHERE NAME LIKE '%a%';
 
--- עובדים בגיל בין 25 ל־27 כולל
+-- Employees whose age is between 25 and 27 (inclusive)
 SELECT * FROM COMPANY WHERE AGE BETWEEN 25 AND 27;
 ```
 
@@ -139,10 +138,10 @@ SELECT * FROM COMPANY WHERE AGE BETWEEN 25 AND 27;
 ## הגבלת כמות שורות – LIMIT ו־OFFSET
 
 ```sql
--- מציג שלוש הרשומות הראשונות בטבלה
+-- Show the first 3 rows in the table
 SELECT * FROM COMPANY LIMIT 3;
 
--- מדלג על שתי הרשומות הראשונות ומחזיר את שלוש הבאות
+-- Skip the first 2 rows and return the next 3
 SELECT * FROM COMPANY LIMIT 3 OFFSET 2;
 ```
 
@@ -151,16 +150,16 @@ SELECT * FROM COMPANY LIMIT 3 OFFSET 2;
 ## מיון שורות עם ORDER BY
 
 ```sql
--- ממיין את העובדים לפי גיל בסדר עולה (מהקטן לגדול)
+-- Sort employees by age in ascending order
 SELECT * FROM COMPANY ORDER BY AGE ASC;
 
--- ממיין את העובדים לפי שכר מהגבוה לנמוך
+-- Sort employees by salary in descending order
 SELECT * FROM COMPANY ORDER BY SALARY DESC;
 
--- מציג את שמות שני העובדים שמרוויחים הכי הרבה
+-- Return the names of the top 2 earners
 SELECT NAME FROM COMPANY ORDER BY SALARY DESC LIMIT 2;
 
--- מדלג על שניים ומחזיר את שמות העובדים הבאים ברשימה לפי שכר
+-- Skip top 2 earners and show the next 2 by salary
 SELECT NAME FROM COMPANY ORDER BY SALARY DESC LIMIT 2 OFFSET 2;
 ```
 
