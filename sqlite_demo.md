@@ -2,8 +2,6 @@
 
 <div dir="rtl" style="text-align: right">
 
----
-
 ## יצירת טבלה – CREATE TABLE
 
 ```sql
@@ -16,8 +14,6 @@ CREATE TABLE COMPANY(
   SALARY REAL
 );
 ```
-
----
 
 ## הכנסת נתונים – INSERT INTO
 
@@ -43,8 +39,6 @@ VALUES (6, 'Kim', 22, 'South-Hall', 45000.00 );
 
 INSERT INTO COMPANY VALUES (7, 'James', 24, 'Houston', 10000.00 );
 ```
-
----
 
 ## SELECT בסיסי
 
@@ -77,8 +71,6 @@ SELECT AVG(AGE) FROM COMPANY;
 -- Output: 25.43
 ```
 
----
-
 ## ביטויים מתמטיים ופונקציות
 
 ```sql
@@ -91,8 +83,6 @@ SELECT ABS(-15);             -- Output: 15
 SELECT ROUND(3.14159, 2);    -- Output: 3.14
 ```
 
----
-
 ## תאריכים ושעה
 
 ```sql
@@ -102,8 +92,6 @@ SELECT CURRENT_TIMESTAMP;                 -- Output: 2025-06-27 14:52:03
 SELECT datetime('now', 'localtime');      -- Output: 2025-06-27 17:52:03
 SELECT strftime('%Y', 'now');             -- Output: 2025
 ```
-
----
 
 ## סינון עם WHERE, IN, LIKE, BETWEEN
 
@@ -133,8 +121,6 @@ SELECT * FROM COMPANY WHERE NAME LIKE '%a%';
 SELECT * FROM COMPANY WHERE AGE BETWEEN 25 AND 27;
 ```
 
----
-
 ## הגבלת כמות שורות – LIMIT ו־OFFSET
 
 ```sql
@@ -144,8 +130,6 @@ SELECT * FROM COMPANY LIMIT 3;
 -- Skip the first 2 rows and return the next 3
 SELECT * FROM COMPANY LIMIT 3 OFFSET 2;
 ```
-
----
 
 ## מיון שורות עם ORDER BY
 
@@ -161,6 +145,22 @@ SELECT NAME FROM COMPANY ORDER BY SALARY DESC LIMIT 2;
 
 -- Skip top 2 earners and show the next 2 by salary
 SELECT NAME FROM COMPANY ORDER BY SALARY DESC LIMIT 2 OFFSET 2;
+```
+
+## עדכון נתונים – UPDATE
+
+```sql
+-- Update the address to 'Texas' and increase age by 1 for the employee with ID = 7
+UPDATE COMPANY 
+SET ADDRESS = 'Texas', AGE = AGE + 1
+WHERE ID = 7;
+```
+
+## מחיקת רשומות – DELETE
+
+```sql
+-- Delete the employee with ID = 7
+DELETE FROM COMPANY WHERE ID = 7;
 ```
 
 </div>
