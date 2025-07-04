@@ -71,5 +71,5 @@ data = [
 
 ## 📤 הגשה
 
-יש לשלוח את הקובץ `sqlite_python_hw.py` עם כל שלבי התרגול והמימושים למייל:
+יש לשלוח את הפתרון עם כל שלבי התרגול והמימושים למייל:
 📧 [pythonai200425+sqlitehw2@gmail.com](mailto:pythonai200425+sqlitehw2@gmail.com)
