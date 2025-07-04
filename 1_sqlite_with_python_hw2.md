@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS STUDENTS(
 ''')
 ```
 
-### 4️⃣ הוספת נתונים בבטחה
+### 4️⃣ הוספת נתונים בקבוצה
 
 ```python
 data = [
@@ -46,11 +46,9 @@ data = [
   (2, 'Lior', 90, 2011),
   (3, 'Dana', 78, 2009)
 ]
-cursor.executemany('''
-INSERT INTO STUDENTS (ID, NAME, GRADE, BIRTHYEAR)
-VALUES (?, ?, ?, ?);
-''', data)
 ```
+
+הוסף רשומות אלה בשאילתא אחת
 
 ### 5️⃣ עדכון נתון
 
