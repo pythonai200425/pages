@@ -11,8 +11,6 @@
 | 5  | Eva   | Math    | 1998        |
 | 6  | Frank | Science | 2001        |
 
----
-
 #### 1. ALTER TABLE RENAME
 
 Rename an existing table in the database
@@ -21,8 +19,6 @@ Rename an existing table in the database
 ALTER TABLE students RENAME TO learners
 ```
 
----
-
 #### 2. ALTER TABLE ADD COLUMN
 
 Add a new column to an existing table
@@ -30,8 +26,6 @@ Add a new column to an existing table
 ```sql
 ALTER TABLE learners ADD COLUMN birth_year INTEGER
 ```
-
----
 
 #### 3. GROUP BY
 
@@ -51,8 +45,6 @@ GROUP BY course
 | Math    | 3         |
 | Science | 2         |
 
----
-
 #### 4. GROUP BY with WHERE
 
 Use `WHERE` to filter rows before grouping
@@ -71,8 +63,6 @@ GROUP BY course
 | History | 1         |
 | Math    | 1         |
 | Science | 1         |
-
----
 
 #### 5. GROUP BY with HAVING
 
