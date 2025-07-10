@@ -61,6 +61,8 @@ INNER JOIN mishmeret m ON e.mishmeret_id = m.id;
 
 #### 2. LEFT JOIN 
 
+<img src="images/left.jpg" />
+
 Returns all rows from the left table, and matched rows from the right table
 
 ```sql
@@ -82,6 +84,8 @@ LEFT JOIN mishmeret m ON e.mishmeret_id = m.id;
 
 #### 3. LEFT OUTER JOIN
 
+<img src="images/left_outer.jpg" />
+
 Shows employees without any assigned mishmeret
 
 ```sql
@@ -99,6 +103,8 @@ WHERE e.mishmeret_id IS NULL;
 | 6  | anatoly | NULL          | NULL |
 
 #### 4. FULL OUTER JOIN (Simulated)
+
+<img src="images/full.jpg" />
 
 Simulate using UNION of LEFT and RIGHT joins (note: RIGHT JOIN not supported in SQLite)
 
