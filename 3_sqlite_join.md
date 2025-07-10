@@ -40,6 +40,8 @@ INSERT INTO mishmeret (id, day) VALUES
 
 #### 1. INNER JOIN
 
+<img src="images/inner.png" />
+
 Returns only rows with matching values in both tables
 
 ```sql
