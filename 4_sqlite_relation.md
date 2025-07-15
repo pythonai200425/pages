@@ -40,7 +40,7 @@ INSERT INTO passports (person_id, passport_number) VALUES
 ```sql
 SELECT pe.*, p.passport_number
 FROM passports p
-LEFT JOIN persons pe ON pe.person_id = p.person_id;
+INNER JOIN persons pe ON pe.person_id = p.person_id;
 ```
 
 #### Show all people (with or without passport)
