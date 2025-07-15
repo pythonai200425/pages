@@ -74,6 +74,8 @@ CREATE TABLE books (
 );
 ```
 
+<img src="images/1_to_manyd.jpg" />
+
 #### INSERT Sample Data
 
 ```sql
@@ -140,6 +142,8 @@ CREATE TABLE enrollments (
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
 );
 ```
+
+<img src="images/many_to_manyd.jpg" />
 
 #### INSERT Sample Data
 
