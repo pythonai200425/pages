@@ -2,6 +2,8 @@
 
 ### 1. One-to-One Relationship (1:1)
 
+<img src="images/1_to_1.jpg" />
+
 #### Example: persons and passports
 
 Each person can have only one passport, and each passport belongs to only one person.
@@ -50,6 +52,8 @@ LEFT JOIN passports p ON pe.person_id = p.person_id;
 ```
 
 ### 2. One-to-Many Relationship (1\:N)
+
+<img src="images/1_to_many.jpg" />
 
 #### Example: authors and books
 
@@ -109,6 +113,8 @@ WHERE b.author_id IS NULL;
 ```
 
 ### 3. Many-to-Many Relationship (M\:N)
+
+<img src="images/many_to_many.jpg" />
 
 #### Example: students and courses via enrollments
 
