@@ -20,6 +20,7 @@ CREATE TABLE passports (
     FOREIGN KEY (person_id) REFERENCES persons(person_id)
 );
 ```
+<img src="images/1_to_1d.jpg" />
 
 #### INSERT Sample Data
 
