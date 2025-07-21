@@ -2,7 +2,7 @@
 
 ### 1. AUTOINCREMENT
 
-מזהה ייחודי שמוגדר אוטומטית ומתקדם אוטומטית בכל הוספה חדשה.
+מזהה ייחודי שמוגדר אוטומטית ומתקדם אוטומטית בכל הוספה חדשה
 
 ```sql
 CREATE TABLE users (
@@ -18,7 +18,7 @@ INSERT INTO users (name) VALUES ('Bob');    -- id = 2
 
 ### 2. UNION
 
-מאחד תוצאות משתי טבלאות עם אותו מבנה עמודות.
+מאחד תוצאות משתי טבלאות עם אותו מבנה עמודות
 `UNION` מחזיר ערכים ייחודיים (כמו `DISTINCT`), ואילו `UNION ALL` כולל כפילויות.
 
 ```sql
@@ -45,7 +45,7 @@ SELECT name FROM teachers;  -- מחזיר Alice, Bob, Carol
 ### 3. ON DELETE CASCADE
 
 כאשר טבלה בת (child) תלויה בטבלת אב (parent), אפשר להגדיר `ON DELETE CASCADE`
-כך שמחיקת שורה מההורה תגרור מחיקה אוטומטית מהטבלה הבת.
+כך שמחיקת שורה מההורה תגרור מחיקה אוטומטית מהטבלה הבת
 
 ```sql
 PRAGMA foreign_keys = ON;
@@ -73,7 +73,7 @@ DELETE FROM authors WHERE author_id = 1;  -- מוחק גם את הספר The Hob
 ### 4. TRIGGER
 
 `TRIGGER` הוא מנגנון שמבצע פעולה אוטומטית בעקבות אירועים כמו `INSERT`, `DELETE` או `UPDATE`.
-בדוגמה הבאה, כל פעולה על טבלת `grades` תעדכן את טבלת הסטטיסטיקה `grade_stats`.
+בדוגמה הבאה, כל פעולה על טבלת `grades` תעדכן את טבלת הסטטיסטיקה `grade_stats`
 
 ```sql
 CREATE TABLE grades (
@@ -131,7 +131,7 @@ INSERT INTO grades (student_name, grade) VALUES ('Alice', 95);  -- מפעיל ט
 
 ### 5. VIEW
 
-תצוגה (`VIEW`) היא שאילתה שמאוחסנת כמו טבלה וניתן לשלוף ממנה נתונים כמו מטבלה רגילה.
+תצוגה (`VIEW`) היא שאילתה שמאוחסנת כמו טבלה וניתן לשלוף ממנה נתונים כמו מטבלה רגילה
 
 ```sql
 CREATE TABLE orders (
