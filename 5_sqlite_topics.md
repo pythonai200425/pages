@@ -72,7 +72,7 @@ DELETE FROM authors WHERE author_id = 1;  -- מוחק גם את הספר The Hob
 
 ### 4. TRIGGER
 
-`TRIGGER` הוא מנגנון שמבצע פעולה אוטומטית בעקבות אירועים כמו `INSERT`, `DELETE` או `UPDATE`.
+ה- `TRIGGER` הוא מנגנון שמבצע פעולה אוטומטית בעקבות אירועים כמו `INSERT`, `DELETE` או `UPDATE`
 בדוגמה הבאה, כל פעולה על טבלת `grades` תעדכן את טבלת הסטטיסטיקה `grade_stats`
 
 ```sql
