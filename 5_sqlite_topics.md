@@ -19,7 +19,7 @@ INSERT INTO users (name) VALUES ('Bob');    -- id = 2
 ### 2. UNION
 
 מאחד תוצאות משתי טבלאות עם אותו מבנה עמודות
-`UNION` מחזיר ערכים ייחודיים (כמו `DISTINCT`), ואילו `UNION ALL` כולל כפילויות.
+ה- `UNION` מחזיר ערכים ייחודיים (כמו `DISTINCT`), ואילו `UNION ALL` כולל כפילויות
 
 ```sql
 CREATE TABLE students (
@@ -124,7 +124,10 @@ BEGIN
     WHERE id = 1;
 END;
 
-INSERT INTO grades (student_name, grade) VALUES ('Alice', 95);  -- מפעיל טריגר
+-- דוגמאות שמפעילות את הטריגרים
+INSERT INTO grades (student_name, grade) VALUES ('Alice', 95);  -- מפעיל טריגר insert
+UPDATE grades SET grade = 100 WHERE id = 1;  -- מפעיל טריגר update
+DELETE FROM grades WHERE id = 1;  -- מפעיל טריגר delete
 ```
 
 ---
