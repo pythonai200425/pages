@@ -14,8 +14,6 @@ INSERT INTO users (name) VALUES ('Alice');  -- id = 1
 INSERT INTO users (name) VALUES ('Bob');    -- id = 2
 ```
 
----
-
 ### 2. UNION
 
 מאחד תוצאות משתי טבלאות עם אותו מבנה עמודות
@@ -39,8 +37,6 @@ SELECT name FROM students
 UNION
 SELECT name FROM teachers;  -- מחזיר Alice, Bob, Carol
 ```
-
----
 
 ### 3. ON DELETE CASCADE
 
@@ -67,8 +63,6 @@ INSERT INTO books (title, author_id) VALUES ('The Hobbit', 1);
 
 DELETE FROM authors WHERE author_id = 1;  -- מוחק גם את הספר The Hobbit
 ```
-
----
 
 ### 4. TRIGGER
 
@@ -129,8 +123,6 @@ INSERT INTO grades (student_name, grade) VALUES ('Alice', 95);  -- מפעיל ט
 UPDATE grades SET grade = 100 WHERE id = 1;  -- מפעיל טריגר update
 DELETE FROM grades WHERE id = 1;  -- מפעיל טריגר delete
 ```
-
----
 
 ### 5. VIEW
 
