@@ -29,8 +29,6 @@ CREATE TABLE my_users (
 );
 ```
 
-In PostgreSQL, the SERIAL keyword is a shorthand for creating an auto-incrementing column. When you define a column as SERIAL, PostgreSQL automatically creates a sequence behind the scenes and sets the column’s default value to the next value from that sequence. This eliminates the need to manually create and maintain sequences for primary keys.
-
 **PostgreSQL:**
 
 ```sql
@@ -45,6 +43,8 @@ CREATE TABLE my_users (
 * **SERIAL** = `INTEGER` + auto-increment (4 bytes)
 * **BIGSERIAL** = `BIGINT` + auto-increment (8 bytes)
 * **SMALLSERIAL** = `SMALLINT` + auto-increment (2 bytes)
+
+In PostgreSQL, the SERIAL keyword is a shorthand for creating an auto-incrementing column. When you define a column as SERIAL, PostgreSQL automatically creates a sequence behind the scenes and sets the column’s default value to the next value from that sequence. This eliminates the need to manually create and maintain sequences for primary keys.
 
 ### 2. Inline FOREIGN KEY
 
