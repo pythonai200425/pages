@@ -2,7 +2,6 @@
 
 <img src="pg.jpg" align="left" />
 
-### Topics
 - why postgresql?
 - SERIAL
 - INSERT with Random  
