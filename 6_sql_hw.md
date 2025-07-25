@@ -95,6 +95,14 @@ CREATE TABLE measurements (
 **שאלה:**
 שנה את המבנה כך שהכול יישמר בטבלה אחת בשם `enrollments` עם שדה JSONB שמכיל את רשימת הקורסים של כל סטודנט
 
+דוגמא לעמודת- JOSNB
+```
+{
+  "math": "2024-11-01",
+  "history": "2024-11-15"
+}
+```
+
 ```sql
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
@@ -103,7 +111,8 @@ CREATE TABLE students (
 
 CREATE TABLE courses (
     id SERIAL PRIMARY KEY,
-    title TEXT NOT NULL
+    title TEXT NOT NULL,
+    course_date DATE NOT NULL
 );
 
 CREATE TABLE student_courses (
@@ -116,9 +125,9 @@ INSERT INTO students (name) VALUES
 ('Roni'),
 ('Alon');
 
-INSERT INTO courses (title) VALUES
-('math'),
-('history');
+INSERT INTO courses (title, course_date) VALUES
+('math', '2024-11-01'),
+('history', '2024-11-15');
 
 INSERT INTO student_courses (student_id, course_id) VALUES
 (1, 1),
