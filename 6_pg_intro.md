@@ -1,6 +1,6 @@
-<img src="pg.jpg" />
+## Beginner's Guide to PostgreSQL
 
-## PostgreSQL 
+<img src="pg.jpg" />
 
 ### Topics
 - why postgresql?
