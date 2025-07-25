@@ -1,3 +1,5 @@
+<img src="pg.jpg" />
+
 ## PostgreSQL 
 
 ### Topics
