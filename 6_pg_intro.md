@@ -1,6 +1,12 @@
 ## PostgreSQL 
 
-### Topics: why postgresql? SERIAL, FK Inline, TIMESTAMP, JSONB, INSERT with Random
+### Topics
+- why postgresql?
+- SERIAL
+- INSERT with Random  
+- FK Inline
+- TIMESTAMP
+- JSONB
 
 ### Why Use PostgreSQL?
 
