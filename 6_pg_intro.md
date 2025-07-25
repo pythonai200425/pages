@@ -8,6 +8,7 @@
 - FK Inline
 - TIMESTAMP
 - JSONB
+  
 
 ### Why Use PostgreSQL?
 
