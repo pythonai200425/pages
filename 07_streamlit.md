@@ -1,4 +1,3 @@
-## Getting Started with Streamlit in Python
 
 <img src="images/streamlit.png" width="50%" />
 
@@ -34,7 +33,7 @@ st.title("Hello Streamlit")
 st.write("Welcome to your first web app!")
 ```
 
-<img src="images/streamlit1.jpg" width="50%" border="1"/>
+<img src="images/streamlit1.jpg" width="50%" style="border:2px solid black;"/>
 
 ### 4. Common Streamlit Components
 
