@@ -62,7 +62,7 @@ name = st.text_input("Enter your name")
 email = st.text_input("Enter your email")
 ```
 
-<img src="images/streamlit2.jpg" width="75%"/>
+<img src="images/streamlit2.jpg" width="50%"/>
 
 #### `st.button()`
 
@@ -73,7 +73,7 @@ if st.button("Submit"):
     st.success("Submitted successfully!")
 ```
 
-<img src="images/streamlit3.jpg" width="75%" />
+<img src="images/streamlit3.jpg" width="50%" />
 
 #### `st.selectbox()`
 
@@ -84,7 +84,7 @@ choice = st.selectbox("Choose user", ["Alice", "Bob", "Charlie"])
 st.write("You selected:", choice)
 ```
 
-<img src="images/streamlit4.jpg" width="75%"/>
+<img src="images/streamlit4.jpg" width="50%"/>
 
 #### `st.success()` and `st.error()`
 
@@ -95,7 +95,7 @@ st.success("User added successfully")
 st.error("An error occurred")
 ```
 
-<img src="images/streamlit5.jpg" width="75%" />
+<img src="images/streamlit5.jpg" width="50%" />
 
 #### `st.info()`
 
@@ -131,7 +131,7 @@ if st.button("Save"):
         st.error("All fields required")
 ```
 
-<img src="images/streamlit6.jpg" width="75%" />
+<img src="images/streamlit6.jpg" width="40%" />
 
 ### Summary
 
