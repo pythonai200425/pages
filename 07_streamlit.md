@@ -105,6 +105,8 @@ Displays info messages (blue):
 st.info("Please enter all fields")
 ```
 
+<img src="images/streamlit7.jpg" width="50%" />
+
 #### `st.rerun()`
 
 Reloads the app (e.g. after a database change):
