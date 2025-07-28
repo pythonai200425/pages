@@ -105,7 +105,7 @@ Displays info messages (blue):
 st.info("Please enter all fields")
 ```
 
-<img src="images/streamlit7.jpg" width="50%" />
+<img src="images/streamlit7.jpg" width="60%" />
 
 #### `st.rerun()`
 
