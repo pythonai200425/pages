@@ -27,8 +27,6 @@ SELECT * FROM hello_world();
 * This function returns a greeting string with the current timestamp
 * No input parameters, and it returns a single VARCHAR
 
----
-
 ## 🔧 Example: Stored Procedure to Create a Table
 
 ```sql
@@ -54,8 +52,6 @@ CALL create_demo_table();
 
 * This procedure creates a table called `demo` with `id`, `name`, and `email`
 * `CALL` is used to invoke stored procedures
-
----
 
 ## ➕ Example: Function to Add Two Numbers
 
@@ -108,8 +104,6 @@ SELECT * FROM sp_product(8, 2);
 
 * Returns both the product and division result
 * Uses `OUT` parameters to return multiple values as columns
-
----
 
 ## 🧠 Final Challenge: Function with Multiple Calculations
 
