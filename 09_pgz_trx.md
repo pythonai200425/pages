@@ -14,9 +14,15 @@ Finalizes a transaction and saves all changes made during the transaction to the
 ### ❌ `ROLLBACK`
 Cancels the entire transaction and undoes all changes made during it.
 
----
-
 ## 💳 Example: Transferring Money Between Accounts
+
+#### 📘 Explanation of Key Parts
+
+* `try:` block starts the transaction manually
+* `UPDATE` queries simulate money transfer
+* `commit()` applies the changes permanently
+* `rollback()` cancels all operations if something goes wrong
+* `RealDictCursor` gives dictionary-like rows for easy printing
 
 ```python
 import psycopg2
@@ -82,13 +88,5 @@ for row in rows:
 db_connection.close()
 ```
 
----
 
-## 📘 Explanation of Key Parts
-
-* `try:` block starts the transaction manually
-* `UPDATE` queries simulate money transfer
-* `commit()` applies the changes permanently
-* `rollback()` cancels all operations if something goes wrong
-* `RealDictCursor` gives dictionary-like rows for easy printing
 
