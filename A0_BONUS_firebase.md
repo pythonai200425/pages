@@ -66,7 +66,7 @@ print("Document written to Firestore!")
 
 ### 💬 BONUS: Build a Live Chat App with Streamlit + Firestore
 
-<img src="chat_screen" />
+<img src="chat_screen.jpg" />
 
 Install requirements:
 ```bash
