@@ -1,6 +1,6 @@
 ## 🔥 Firebase Firestore: Step-by-Step Setup Tutorial
 
-This guide shows how to set up a **Cloud Firestore** database in Firebase, use **test mode**, and **download the `serviceAccountKey.json`** for backend or app access.
+<img src="firebase.jpg" align="left" /> This guide shows how to set up a **Cloud Firestore** database in Firebase, use **test mode**, and **download the `serviceAccountKey.json`** for backend or app access.
 
 ### ✅ Step 1: Create a Firebase Project
 
