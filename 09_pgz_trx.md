@@ -65,17 +65,17 @@ try:
     cursor.execute("UPDATE bank_account SET balance = balance - 200 WHERE id = 2")
 
     db_connection.commit()  # ✅ Commit changes if both succeed
-    print("\u2705 Transaction successful. Changes committed.")
+    print("Transaction successful. Changes committed.")
 
 except Exception as e:
     db_connection.rollback()  # ❌ Roll back if there's an error
-    print("\u274C Transaction failed. All changes rolled back.")
+    print("Transaction failed. All changes rolled back.")
     print("Error:", e)
 
 # 🧾 Show final state
 cursor.execute("SELECT id, name, balance FROM bank_account ORDER BY id")
 rows = cursor.fetchall()
-print("\nFinal state of bank_account:")
+print("Final state of bank_account:")
 for row in rows:
     print(row)
 
