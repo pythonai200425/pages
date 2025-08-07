@@ -22,7 +22,6 @@ Cancels the entire transaction and undoes all changes made during it.
 * `UPDATE` queries simulate money transfer
 * `commit()` applies the changes permanently
 * `rollback()` cancels all operations if something goes wrong
-* `RealDictCursor` gives dictionary-like rows for easy printing
 
 ```python
 import psycopg2
