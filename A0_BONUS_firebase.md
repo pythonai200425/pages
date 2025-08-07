@@ -66,6 +66,8 @@ print("Document written to Firestore!")
 
 ### 💬 BONUS: Build a Live Chat App with Streamlit + Firestore
 
+<img src="chat_screen" />
+
 Install requirements:
 ```bash
 pip install streamlit firebase-admin streamlit-autorefresh pytz
@@ -121,22 +123,6 @@ for m in msgs[-5:]:
 Run it with:
 ```bash
 streamlit run app.py
-```
-
-This will open a browser window where users can chat live using Firebase Firestore!
-
-### 🔒 Reminder: Secure Your Rules
-
-Firestore in test mode is **open to everyone**. Update rules before going live:
-```js
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if request.auth != null;
-    }
-  }
-}
 ```
 
 You're now ready to build powerful apps with **Cloud Firestore + Streamlit**! 🚀
