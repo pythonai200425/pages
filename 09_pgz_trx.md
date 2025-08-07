@@ -52,7 +52,7 @@ def insert_new_account():
     print("Initial data inserted.\n")
 
 create_table()
-# insert_new_account()  # Uncomment to reset data
+insert_new_account()
 
 # 🎯 Transaction: Transfer 200 from Bob to Alice
 try:
