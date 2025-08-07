@@ -1,6 +1,6 @@
 ## 🔥 Firebase Firestore: Step-by-Step Setup Tutorial
 
-This guide shows how to set up a **Cloud Firestore** database in Firebase, use **test mode**, and **download the `serviceAccountKey.json`** for backend or app access.
+<img src="firebase.jpg" align="left" /> This guide shows how to set up a **Cloud Firestore** database in Firebase, use **test mode**, and **download the `serviceAccountKey.json`** for backend or app access.
 
 ### ✅ Step 1: Create a Firebase Project
 
@@ -66,7 +66,7 @@ print("Document written to Firestore!")
 
 ### 💬 BONUS: Build a Live Chat App with Streamlit + Firestore
 
-<img src="chat_screen.jpg" />
+<img src="chat_screen.jpg" width = "60%" />
 
 Install requirements:
 ```bash
@@ -124,5 +124,23 @@ Run it with:
 ```bash
 streamlit run app.py
 ```
+
+This will open a browser window where users can chat live using Firebase Firestore!
+
+### 🗂️ Suggested Project Structure
+
+```
+my-firestore-chat-app/
+├── app.py                   # Streamlit chat app
+├── serviceAccountKey.json  # Firebase service account key
+├── requirements.txt        # Optional: list of dependencies
+└── README.md               # Optional: project documentation
+```
+
+> You can create `requirements.txt` with:
+```bash
+pip freeze > requirements.txt
+```
+
 
 You're now ready to build powerful apps with **Cloud Firestore + Streamlit**! 🚀
