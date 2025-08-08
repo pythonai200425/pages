@@ -1,4 +1,4 @@
-# 📘 Exam Topics: SQL, PostgreSQL, Python & Streamlit
+# 📘 Exam Topics: SQL, PostgreSQL, Python
 
 ## 1. 📄 SQLite Basics
 
