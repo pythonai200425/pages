@@ -4,7 +4,7 @@
 
 * Creating tables with `CREATE TABLE`, including column constraints:
 
-  * `PRIMARY KEY`, `UNIQUE`, `NOT NULL`, `DEFAULT`, `CHECK`
+* `PRIMARY KEY`, `UNIQUE`, `NOT NULL`, `DEFAULT`, `CHECK`
 * Inserting data using `INSERT INTO`
 * Querying data using `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `OFFSET`
 * Using `UNION` to combine results without duplicates
@@ -35,7 +35,12 @@
   * Junction tables and composite primary keys
   * Counting subscriptions per company
 
-## 4. 🧐 Advanced SQL (SQLite & PostgreSQL)
+## 4. 🐘 PostgreSQL  
+
+* Basic operations with PostgreSQL  
+* PGAdmin  
+
+## 5. 🧐 Advanced SQL (SQLite & PostgreSQL)
 
 * Creating and querying `VIEW`s for reusable queries
 * Using `EXPLAIN QUERY PLAN` to analyze query performance *BONUS TOPIC*
@@ -47,7 +52,7 @@
 * `CROSS JOIN`, `FULL OUTER JOIN`, and other advanced JOIN types
 * Defining `TRIGGERS` for insert/update/delete logic
 
-## 5. ⚙️ Stored Procedures (PostgreSQL) ⚙️ Stored Procedures (PostgreSQL)
+## 6. ⚙️ Stored Procedures (PostgreSQL)
 
 * Creating stored functions using `CREATE FUNCTION` and procedures with `CREATE PROCEDURE`
 * Returning multiple `OUT` parameters
@@ -62,7 +67,7 @@
   * Preparing and querying a books + authors database
   * Summary statistics: oldest, youngest, avg price, total books
 
-## 6. 🐘 PostgreSQL with Python
+## 7. PostgreSQL with Python
 
 * Connecting using `psycopg2.connect()`
 * Using `RealDictCursor` to get dictionary-like rows
