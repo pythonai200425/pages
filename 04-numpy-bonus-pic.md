@@ -27,8 +27,24 @@ plt.imshow(photo)
 
 ```python
 from skimage import io
-photo = io.imread('imoji.jpg')
+photo = io.imread('cavalery.jpg')
 plt.imshow(photo[:, 0:100, :])
 ```
 
 <img src="images/cavaleryc.jpg" width="25%"/>
+
+## Rotate image
+
+```python
+from skimage import io
+from PIL import Image
+
+photo = io.imread('cavalery.jpg')
+photo_pil = Image.fromarray(photo)
+photo = photo_pil.rotate(240)
+
+import matplotlib.pyplot as plt
+plt.imshow(photo)
+```
+
+<img src="images/cavaleryr.jpg" width="50%"/>
