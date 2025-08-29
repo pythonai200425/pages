@@ -3,6 +3,8 @@
 
 # NumPy Practice Questions
 
+Solve 1 question from each topic:
+
 ## Basics
 
 1. Create a NumPy array from the list `[10, 20, 30, 40]`.
