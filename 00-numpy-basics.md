@@ -1,11 +1,11 @@
-# NumPy Basics
+
+
+<img src="images/numpy1.png" />
 
 ## What is NumPy?
 
 NumPy (Numerical Python) is a core Python library for numerical and scientific computing.
 It provides a powerful object called **ndarray**, which is a fast, flexible multidimensional array, along with functions for mathematical operations, linear algebra, random number generation, and more.
-
----
 
 ## Installing NumPy in Jupyter
 

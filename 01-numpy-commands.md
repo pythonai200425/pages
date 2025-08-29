@@ -1,4 +1,5 @@
-# NumPy Commands
+
+<img src="images/numpy1.png" />
 
 ## Array Mathematics
 
