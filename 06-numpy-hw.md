@@ -69,5 +69,9 @@
 
 21. *Bonus: From the array `B = np.array([[12, 45, 7], [33, 5, 29]])`, find the indices of the minimum and maximum elements in 1D form + 2D form
 
+## Images
+
+22. *Bonus: use the image from ```images/numpy1.png``` -- load it and rotate it 90 degrees
+
 **Submission email**: [pythonai200425+numpysum@gmail.com](mailto:pythonai200425+numpysum@gmail.com)
 

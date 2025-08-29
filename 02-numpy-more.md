@@ -83,3 +83,25 @@ np.unravel_index(np.argmin(B), B.shape)
 np.unravel_index(np.argmax(B), B.shape)
 (0, 1)
 ```
+
+
+## Concatenation
+
+```python
+x = np.array([[1, 2],
+              [3, 4]])
+
+y = np.array([[5, 6]])
+
+# Concatenate vertically (row-wise)
+np.concatenate((x, y), axis=0)
+[[1 2]
+ [3 4]
+ [5 6]]
+
+# Concatenate horizontally (column-wise)
+z = np.array([[7], [8]])
+np.concatenate((x, z), axis=1)
+[[1 2 7]
+ [3 4 8]]
+```
