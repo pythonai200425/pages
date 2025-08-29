@@ -29,6 +29,15 @@ a[a > np.mean(a)]  # filter elements greater than mean
 [40 50]
 ```
 
+## Modiying Arrays
+
+```python
+# np.where(condition , what to replace if true, what to replace if false)
+
+a = np.array([1, 2, 3, 4])
+np.where(a % 2 == 0, 'zugi', 'e-zugi')  # ['e-zugi', 'zugi', 'e-zugi', 'zugi']
+```
+
 ## Conditions with &, |, \~
 
 ```python
