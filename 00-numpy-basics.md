@@ -21,8 +21,6 @@ Then import it:
 import numpy as np
 ```
 
----
-
 ## Working with Axes (`axis=0` vs `axis=1`)
 
 In NumPy, operations can be applied along different **axes**:
@@ -39,8 +37,6 @@ x = np.array([[1, 2, 3],
 x.sum(axis=0)   # [5, 7, 9] (column sums)
 x.sum(axis=1)   # [6, 15]   (row sums)
 ```
-
----
 
 ## Creating Arrays
 
@@ -60,8 +56,6 @@ c = np.array([[[1, 2, 3], [4, 5, 6]],
  [[3. 2. 1.]
   [4. 5. 6.]]]
 ```
-
----
 
 ## Initial Placeholders
 
@@ -97,8 +91,6 @@ np.empty((2, 2)) # uninitialized array (arbitrary values)
 [[1.23 4.56]
  [7.89 0.12]]   # (example values)
 ```
-
----
 
 ## Inspecting Arrays
 

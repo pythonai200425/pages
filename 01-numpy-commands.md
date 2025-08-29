@@ -26,8 +26,6 @@ np.sqrt(b) # square root
 [2. 2.236 2.449]
 ```
 
----
-
 ## Comparison
 
 ```python
@@ -43,8 +41,6 @@ a < 2
 np.array_equal(a, b) # compare arrays fully
 False
 ```
-
----
 
 ## Aggregate Functions
 
@@ -73,8 +69,6 @@ np.std(a)
 
 ```
 
----
-
 ## Copying Arrays
 
 ```python
@@ -87,8 +81,6 @@ y[0] = 99
 print(x)
 [1  2  3]   
 ```
-
----
 
 ## Sorting Arrays
 
@@ -108,8 +100,6 @@ np.sort(S, axis=1) # sort by row
 [[1 2 3]
  [4 5 6]]
 ```
-
----
 
 ## Subsetting, Slicing, Indexing
 
