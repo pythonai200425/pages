@@ -51,23 +51,6 @@ penguins['culmen_ratio'] = 100 * penguins['culmen_length_mm'] / penguins['culmen
 print(penguins[['culmen_length_mm', 'culmen_depth_mm', 'culmen_ratio']].head())
 ```
 
-## Using `drop` and `inplace`
-
-Some operations allow modification of the DataFrame **in place** without creating a copy.
-
-```python
-# Drop row index 0
-penguins.drop(0, axis=0, inplace=True)
-
-# Drop column 'culmen_depth_mm'
-penguins.drop('culmen_depth_mm', axis=1)
-
-# Reset index in place
-penguins.reset_index(drop=True, inplace=True)
-```
-
-If you don’t pass `inplace=True`, Pandas will return a new DataFrame instead of modifying the original.
-
 ## Using `loc` in DataFrame
 
 The `.loc` accessor is label-based indexing:
@@ -99,3 +82,20 @@ print(penguins.head())
 penguins.reset_index(inplace=True)
 print(penguins.head())
 ```
+
+## Using `drop` and `inplace`
+
+Some operations allow modification of the DataFrame **in place** without creating a copy.
+
+```python
+# Drop row index 0
+penguins.drop(0, axis=0, inplace=True)
+
+# Drop column 'culmen_depth_mm'
+penguins.drop('culmen_depth_mm', axis=1)
+
+# Reset index in place
+penguins.reset_index(drop=True, inplace=True)
+```
+
+If you don’t pass `inplace=True`, Pandas will return a new DataFrame instead of modifying the original
