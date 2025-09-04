@@ -56,8 +56,11 @@ print(penguins[['culmen_length_mm', 'culmen_depth_mm', 'culmen_ratio']].head())
 Some operations allow modification of the DataFrame **in place** without creating a copy.
 
 ```python
-# Drop rows with missing values
-penguins.dropna(inplace=True)
+# Drop row index 0
+penguins.drop(0, axis=0, inplace=True)
+
+# Drop column 'culmen_depth_mm'
+penguins.drop('culmen_depth_mm', axis=1)
 
 # Reset index in place
 penguins.reset_index(drop=True, inplace=True)
