@@ -51,7 +51,7 @@ penguins['culmen_ratio'] = 100 * penguins['culmen_length_mm'] / penguins['culmen
 print(penguins[['culmen_length_mm', 'culmen_depth_mm', 'culmen_ratio']].head())
 ```
 
-## Using `inplace`
+## Using `drop` and `inplace`
 
 Some operations allow modification of the DataFrame **in place** without creating a copy.
 
