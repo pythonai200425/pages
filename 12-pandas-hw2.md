@@ -1,4 +1,4 @@
-# Pandas Lesson 2 – Exercises 🎯
+# Pandas – Exercises 🎯
 
 Practice your new skills with these exercises. Try to solve them without looking back, and only peek if you get stuck 😉
 
