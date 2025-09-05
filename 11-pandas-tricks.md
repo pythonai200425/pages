@@ -1,4 +1,4 @@
-# Pandas Lesson 2 – Rows, Cells, Conditions & More 🐼✨
+# Pandas – Rows, Cells, Conditions & More 🐼✨
 
 In this lesson, we’ll go deeper into DataFrame operations – adding rows, updating cells, concatenating, applying conditions, and more. Let’s have fun with it! 🎉
 
