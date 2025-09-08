@@ -9,7 +9,7 @@ Practice your new skills with these exercises. Try to solve them without looking
 <a href="csv/mpg.csv">link to csv file</a>
 
 ```python
-df = pd.read_csv("mobile.csv")
+df = pd.read_csv("mpg.csv")
 ```
 ## 1. Sorting 🔢
 
