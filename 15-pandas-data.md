@@ -1,8 +1,4 @@
-# Pandas Lesson 4 – Duplicates, Missing Data
-
-Welcome! This friendly tutorial mirrors the style of your previous lesson and walks through **duplicates**, **missing data**, and **merging DataFrames** in Pandas. Every section explains the *why/where* and shows a small, runnable example you can paste into a notebook.
-
-> Tip: Run the cells in order. All examples are self‑contained and short.
+# Pandas – Duplicates, Missing Data
 
 ## Duplicate data – why, where, and how to find it
 
@@ -16,7 +12,7 @@ Welcome! This friendly tutorial mirrors the style of your previous lesson and wa
 
 * Returns a **boolean Series** marking rows that are duplicates of previous rows
 * `subset` lets you check duplicates on specific column(s)
-* `keep` controls which duplicate is considered the “original”: `'first'` (default), `'last'`, or `False` (mark **all** duplicates)
+**all** duplicates)
 
 ```python
 data = {
@@ -77,17 +73,41 @@ df[df.duplicated(subset=['id'])]
 ### `drop_duplicates()`
 
 * Removes duplicate rows
-* Same `subset` and `keep` arguments
+* Same `subset` 
+* `keep` controls which duplicate is considered the “original”: `'first'` (default), `'last'`, or `False` (mark 
 
 ```python
+
+	id	name	 score
+0	1	Alice	 90
+1	2	Bob	 85
+2	2	Bob	 85
+3	3	Charlie	 95
+4	4	David	 80
+5	4	David	 80
+6	4	David	 85
+
 # Keep the first occurrence per id
-print(people.drop_duplicates(subset=["id"], keep="first"))
+print(df.drop_duplicates(subset=["id"], keep="first"))
+
+	id	name	 score
+0	1	Alice 	90
+1	2	Bob 	85
+3	3	Charlie 	95
+4	4	David	 80
 
 # Keep the last occurrence per id
-print(people.drop_duplicates(subset=["id"], keep="last"))
+print(peopdfle.drop_duplicates(subset=["id"], keep="last"))
+
+	id	name	 score
+0	1	Alice 	 90
+2	2	Bob	 85
+3	3	Charlie	 95
+6	4	David	 85
+
 
 # Drop all duplicates (keep none)
-print(people.drop_duplicates())  # entire-row duplicates only
+print(df.drop_duplicates())  # entire-row duplicates only
 ```
 
 ---
