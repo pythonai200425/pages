@@ -182,7 +182,7 @@ display(df['pre_movie_score'].isna().sum(axis=0))  # count per column
 
 ```
 
-## using nan in conditions
+## using ``nan`` in conditions
 
 ```python
 
@@ -277,7 +277,7 @@ df.dropna()  # drop every row which has at least 1 NaN
 3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
 4	Emma	    Stone	    31.0   f	7.0	             9.0               0
 
-df.dropna(thresh=1)  # keep only rows with at least 1 not null
+df.dropna(thresh=1)  # keep rows with at least 1 column value not null
 
 	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
 0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
