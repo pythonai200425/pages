@@ -80,34 +80,30 @@ df[df.duplicated(subset=['id'])]
 
 	id	name	 score
 0	1	Alice	 90
-1	2	Bob	 85
-2	2	Bob	 85
+1	2	Bob	     85
+2	2	Bob	     85
 3	3	Charlie	 95
-4	4	David	 80
-5	4	David	 80
-6	4	David	 85
+4	4	David	 80 <--
+5	4	David	 80 
+6	4	David	 85 <--
 
 # Keep the first occurrence per id
 print(df.drop_duplicates(subset=["id"], keep="first"))
 
 	id	name	 score
-0	1	Alice 	90
-1	2	Bob 	85
-3	3	Charlie 	95
-4	4	David	 80
+0	1	Alice 	 90
+1	2	Bob 	 85
+3	3	Charlie  95
+4	4	David	 80 <---
 
 # Keep the last occurrence per id
 print(peopdfle.drop_duplicates(subset=["id"], keep="last"))
 
 	id	name	 score
 0	1	Alice 	 90
-2	2	Bob	 85
+2	2	Bob	     85
 3	3	Charlie	 95
-6	4	David	 85
-
-
-# Drop all duplicates (keep none)
-print(df.drop_duplicates())  # entire-row duplicates only
+6	4	David	 85 <---
 ```
 
 ---
@@ -125,19 +121,45 @@ print(df.drop_duplicates())  # entire-row duplicates only
 * Surveys, sign‑up forms, imported spreadsheets
 * Sensor/telemetry feeds with intermittent failures
 
+### Understanding `NaN` in Pandas and Python
+
+When working with **missing values** in Pandas (and NumPy), you’ll often see `NaN` (Not a Number).  
+
+#### Important rule:  
+`NaN` is **not equal** to anything, not even itself therefor we need to use ``is``
+
+```python
+import numpy as np
+import pandas as pd
+
+x = np.nan
+print(x == np.nan)   # False
+print(pd.isna(x))    # True
+```
+
 ### `np.nan`, `pd.isna`, `DataFrame.isna`, `DataFrame.notnull`
 
 ```python
-sales = pd.DataFrame({
-    "order_id": [101, 102, 103, 104],
-    "city":     ["NYC", "LA", np.nan, "NYC"],
-    "amount":   [120.0, np.nan, 80.0, np.nan]
-})
+import pandas as pd
+import numpy as np
 
-print(np.nan)                      # the special missing value marker
-print(pd.isna(sales["city"]))     # column-wise missing flags
-print(sales.isna())                # DataFrame-wide missing flags
-print(sales.notnull())             # the inverse
+data = {
+    "first_name": ["Tom", np.nan, "Hugh", "Oprah", "Emma"],
+    "last_name": ["Hanks", np.nan, "Jackman", "Winfrey", "Stone"],
+    "age": [63.0, np.nan, 51.0, 66.0, 31.0],
+    "sex": ["m", np.nan, "m", "f", "f"],
+    "pre_movie_score": [8.0, np.nan, np.nan, 6.0, 7.0],
+    "post_movie_score": [10.0, np.nan, np.nan, 8.0, 9.0]
+}
+
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score
+0	Tom	        Hanks	    63.0   m	8.0	             10.0
+1	NaN	        NaN	        NaN	   NaN	NaN	             NaN
+2	Hugh	    Jackman	    51.0   m	NaN	             NaN
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0
+4	Emma	    Stone	    31.0   f	7.0	             9.0
+
+
 ```
 
 ### Counting missing values with `.isna().sum(axis=0/1)`
