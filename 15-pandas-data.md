@@ -64,6 +64,7 @@ print(df[~df.duplicated()])  # the non-duplicated rows
 
 
 df[df.duplicated(subset=['id'])]
+
     id	name	score
 2	2	Bob	    85
 5	4	David	80
@@ -105,8 +106,6 @@ print(peopdfle.drop_duplicates(subset=["id"], keep="last"))
 3	3	Charlie	 95
 6	4	David	 85 <---
 ```
-
----
 
 ## Missing data – why, where, and how to inspect it
 
@@ -159,27 +158,47 @@ data = {
 3	Oprah	    Winfrey	    66.0   f	6.0	             8.0
 4	Emma	    Stone	    31.0   f	7.0	             9.0
 
+display(df.isna())
+
+	first_name	last_name	age	sex	pre_movie_score	 post_movie_score
+0	False	    False	    False	False	  False	 False
+1	True	    True	    True	True	  True	 True
+2	False	    False	    False	False	  True	 True
+3	False	    False	    False	False	  False	 False
+4	False	    False	    False	False	  False	 False
+
+df['number_of_missing'] = df.isna().sum(axis=1)  # count per row
+display(df)
+
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
+0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
+1	NaN	        NaN	        NaN	   NaN	NaN	             NaN               6
+2	Hugh	    Jackman	    51.0   m	NaN	             NaN               2
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
+4	Emma	    Stone	    31.0   f	7.0	             9.0               0
+
+display(df['pre_movie_score'].isna().sum(axis=0))  # count per column
+2
 
 ```
-
-### Counting missing values with `.isna().sum(axis=0/1)`
-
-* `axis=0` → count per **column** (most common)
-* `axis=1` → count per **row** (useful to drop rows with too many missing fields)
-
-```python
-# Per-column missing counts (axis=0)
-print(sales.isna().sum(axis=0))
-
-# Per-row missing counts (axis=1)
-print(sales.isna().sum(axis=1))
-```
-
----
 
 ## Filling missing values – `apply` vs `fillna`
 
+**Filling Missing Values with Mean, Min, and Max**
+
+When handling missing data, one common strategy is **imputation** — replacing `NaN` with a meaningful value instead of dropping the row or column  
+In Pandas, we often use **mean, min, or max** of a column to fill in the blanks.
+
 **Goal:** Replace numeric `NaN`s with the **mean of each column**
+
+```python
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
+0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
+1	NaN	        NaN	        NaN	   NaN	NaN	             NaN               6
+2	Hugh	    Jackman	    51.0   m	NaN	             NaN               2
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
+4	Emma	    Stone	    31.0   f	7.0	             9.0               0
+```
 
 ### 3.1 Using `apply`
 
