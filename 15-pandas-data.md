@@ -182,6 +182,25 @@ display(df['pre_movie_score'].isna().sum(axis=0))  # count per column
 
 ```
 
+## using nan in conditions
+
+```python
+
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score
+0	Tom	        Hanks	    63.0   m	8.0	             10.0
+1	NaN	        NaN	        NaN	   NaN	NaN	             NaN
+2	Hugh	    Jackman	    51.0   m	NaN	             NaN
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0
+4	Emma	    Stone	    31.0   f	7.0	             9.0
+
+display(df[(df['pre_movie_score'].isna() & df['first_name'].notnull())])
+
+	first_name	last_name	age	sex	pre_movie_score	post_movie_score
+2	Hugh	    Jackman	    51.0   m	NaN	             NaN
+
+
+```
+
 ## Filling missing values – `apply` vs `fillna`
 
 **Filling Missing Values with Mean, Min, and Max**
@@ -200,41 +219,42 @@ In Pandas, we often use **mean, min, or max** of a column to fill in the blanks.
 4	Emma	    Stone	    31.0   f	7.0	             9.0               0
 ```
 
-### 3.1 Using `apply`
+### Using `apply`
 
 ```python
-nums = sales.select_dtypes(include=["number"])  # numeric columns only
-means = nums.mean(numeric_only=True)
+def neewval(x):
+    if pd.isna(x):
+        return df['pre_movie_score'].mean()
+    else:
+        return x
 
-# Use apply to fill each numeric column with its mean
-sales_apply = sales.copy()
-sales_apply[nums.columns] = sales_apply[nums.columns].apply(
-    lambda col: col.fillna(col.mean())
-)
-print(sales_apply)
+df['pre_movie_score'] = df['pre_movie_score'].apply(neewval)
+
+# using lambda
+df['pre_movie_score'] = df['pre_movie_score'].apply(lambda x: df['pre_movie_score'].mean() if pd.isna(x) else x)
+
+
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
+0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
+1	NaN	        NaN	        NaN	   NaN	7.0	             NaN               6
+2	Hugh	    Jackman	    51.0   m	7.0	             NaN               2
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
+4	Emma	    Stone	    31.0   f	7.0	             9.0               0
 ```
 
-### 3.2 Using `fillna` directly (short & fast)
+### Using `fillna` directly (short & fast)
 
 ```python
-sales_fill = sales.copy()
-sales_fill = sales_fill.fillna(value={
-    "amount": sales["amount"].mean(),
-    # city is non-numeric — choose a strategy (mode, placeholder, or leave NaN)
-    # "city": sales["city"].mode().iat[0]
-})
-print(sales_fill)
 
-# Even shorter for all numeric columns at once:
-sales_auto = sales.copy()
-sales_auto[nums.columns] = sales_auto[nums.columns].fillna(nums.mean())
-print(sales_auto)
+df['pre_movie_score'] = df['pre_movie_score'].fillna(df['pre_movie_score'].mean())
+
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
+0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
+1	NaN	        NaN	        NaN	   NaN	7.0	             NaN               6
+2	Hugh	    Jackman	    51.0   m	7.0	             NaN               2
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
+4	Emma	    Stone	    31.0   f	7.0	             9.0               0
 ```
-
-> When to use which?
->
-> * **`fillna`** with a mapping/Series is the simplest and vectorized.
-> * **`apply`** is handy for custom per-column logic beyond simple means.
 
 ## Dropping missing data – `dropna` and `thresh`
 
@@ -242,36 +262,28 @@ print(sales_auto)
 * `thresh` keeps rows/columns that have **at least** this many non‑missing values
 
 ```python
-# Drop rows where ANY value is missing
-print(sales.dropna())
 
-# Drop rows where ALL values are missing
-print(sales.dropna(how="all"))
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
+0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
+1	NaN	        NaN	        NaN	   NaN	NaN	             NaN               6
+2	Hugh	    Jackman	    51.0   m	NaN	             NaN               2
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
+4	Emma	    Stone	    31.0   f	7.0	             9.0               0
 
-# Keep rows with at least 2 non-missing values
-print(sales.dropna(thresh=2))
+df.dropna()  # drop every row which has at least 1 NaN
 
-# Drop columns with too many missing values (axis=1)
-print(sales.dropna(axis=1, thresh=3))
-```
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
+0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
+4	Emma	    Stone	    31.0   f	7.0	             9.0               0
 
-> Practical tips:
->
-> * Use `thresh` when you can tolerate a few NaNs per row but not too many
-> * Prefer **imputation** (filling) before dropping when data is precious
+df.dropna(thresh=1)  # keep only rows with at least 1 not null
 
-## Filtering duplicates via boolean indexing – `df[df.duplicated(...)]`
-
-Sometimes you want to **see** the duplicates before removing them.
-
-```python
-# All duplicate rows by entire-row equality
-dups_all = people[people.duplicated()]
-print(dups_all)
-
-# Duplicates by a subset of columns
-dups_by_id = people[people.duplicated(subset=["id"], keep=False)]  # mark all
-print(dups_by_id.sort_values("id"))
+	first_name	last_name	age	   sex	pre_movie_score	 post_movie_score  number_of_missing
+0	Tom	        Hanks	    63.0   m	8.0	             10.0              0
+2	Hugh	    Jackman	    51.0   m	NaN	             NaN               2
+3	Oprah	    Winfrey	    66.0   f	6.0	             8.0               0
+4	Emma	    Stone	    31.0   f	7.0	             9.0               0
 ```
 
 ## Cheatsheet – parameters to remember
