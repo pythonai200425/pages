@@ -1,4 +1,4 @@
-# Pandas Lesson 4 – Duplicates, Missing Data, and Joins (Easy Tutorial)
+# Pandas Lesson 4 – Duplicates, Missing Data
 
 Welcome! This friendly tutorial mirrors the style of your previous lesson and walks through **duplicates**, **missing data**, and **merging DataFrames** in Pandas. Every section explains the *why/where* and shows a small, runnable example you can paste into a notebook.
 
