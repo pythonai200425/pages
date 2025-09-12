@@ -12,7 +12,6 @@
 
 * Returns a **boolean Series** marking rows that are duplicates of previous rows
 * `subset` lets you check duplicates on specific column(s)
-**all** duplicates)
 
 ```python
 data = {
@@ -75,7 +74,7 @@ df[df.duplicated(subset=['id'])]
 
 * Removes duplicate rows
 * Same `subset` 
-* `keep` controls which duplicate is considered the “original”: `'first'` (default), `'last'`, or `False` (mark 
+* `keep` controls which duplicate is considered the “original”: `'first'` (default), `'last'`, or `False` (mark **all** duplicates)
 
 ```python
 
@@ -122,7 +121,7 @@ print(peopdfle.drop_duplicates(subset=["id"], keep="last"))
 
 ### Understanding `NaN` in Pandas and Python
 
-When working with **missing values** in Pandas (and NumPy), you’ll often see `NaN` (Not a Number).  
+When working with **missing values** in Pandas (and NumPy), you’ll often see `NaN` (Not a Number)
 
 #### Important rule:  
 `NaN` is **not equal** to anything, not even itself therefor we need to use ``is``
@@ -133,6 +132,7 @@ import pandas as pd
 
 x = np.nan
 print(x == np.nan)   # False
+print(x is np.nan)   # True
 print(pd.isna(x))    # True
 ```
 
