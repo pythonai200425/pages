@@ -16,7 +16,7 @@ A city taxi charges a base fare plus a fixed rate per kilometer:
 4. Limit the axes to `xlim(0, 10)` and `ylim(0, 60)`
 5. Save as **taxi_fare_line.jpg** and show the plot
 
-Line graph demo:
+Line graph demo:  
 <img src="images/ex1.png" style="width: 40%">
 
 ## 2. Visual Analysis with `tips.csv` 🍽️
@@ -33,7 +33,7 @@ Link to  <a hef="csv/tips.cvs">tips.csv</a>
 * Add title and axis labels
 * By looking at the graph- Is there a correlation?
 
-Scatter graph demo:
+Scatter graph demo:  
 <img src="images/ex8.png" style="width: 40%">
 
 ### 2.2. Bar: maximum total_bill per day
@@ -41,7 +41,7 @@ Scatter graph demo:
 * For each `day`, find the **max total_bill**
 * Plot a bar chart of these maxima
 
-Bar graph demo:
+Bar graph demo:  
 <img src="images/ex9.png" style="width: 40%">
 
 
@@ -50,7 +50,7 @@ Bar graph demo:
 * Plot a histogram of `tip`
 * **Question**: *By looking at the graph- what is the range of the most common tip?*
 
-Histogram graph demo:
+Histogram graph demo:  
 <img src="images/ex10.png" style="width: 40%">
 
 ### 2.4. Histogram: tip percentage
@@ -59,7 +59,7 @@ Histogram graph demo:
 * Plot a histogram of `tip_perc`
 * **Question**: *By looking at the graph- what is the range of the most tip percentage?*
 
-Histogram graph demo:
+Histogram graph demo:  
 <img src="images/ex10.png" style="width: 40%">
 
 ### 2.5. Subplots: combine all four visuals
@@ -70,7 +70,7 @@ Histogram graph demo:
 * Make sure each subplot has a title and labeled axes
 * Adjust layout and save as **tips_overview.png**
 
-Subplot graph demo:
+Subplot graph demo:  
 <img src="images/ex5.png" style="width: 40%">
 
 **Submission email**: [pythonai200425+matplothw1@gmail.com](mailto:pythonai200425+matplothw1@gmail.com)
