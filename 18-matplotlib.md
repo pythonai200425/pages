@@ -21,7 +21,7 @@ plt.plot(x, y)
 plt.show()
 ```
 
-<img src="images/ex1.png">
+<img src="images/ex1.png" style="width: 50%">
 
 You can add features:
 
