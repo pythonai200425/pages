@@ -21,6 +21,8 @@ plt.plot(x, y)
 plt.show()
 ```
 
+<img src="images/ex1.png">
+
 You can add features:
 
 ```python
@@ -121,7 +123,34 @@ plt.show()
 ## Customizing the Graph
 
 ```python
-plt.plot(x, y, marker='o', lw=2, linestyle='--', color='red')
+# Data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+y2 = np.cos(x)
+
+# Create the figure and axis
+fig, graph = plt.subplots(figsize=(8, 6))
+
+# Plot with all the mentioned features
+# First line: customized color, line width (lw), line style (ls), marker, and marker size
+graph.plot(x, y, label='Sine Wave', color='#15d15a', lw=10, ls='--', marker='o', markersize=8)
+
+# Second line: another set of customization
+graph.plot(x, y2, label='Cosine Wave', color='red', lw=3, linestyle='-', marker='x', markersize=8)
+
+# Set title, labels, and legend
+graph.set_title('Customized Chart', fontsize=24)
+graph.set_xlabel('X-axis', fontsize=12)
+graph.set_ylabel('Y-axis', fontsize=12)
+
+# Add legend
+graph.legend()
+
+# Add grid
+graph.grid(True)
+
+# Show the plot
+plt.tight_layout()
 plt.show()
 ```
 
@@ -185,17 +214,7 @@ plt.show()
 * `bins` splits the data range into intervals (like buckets). Here `bins=30` means 30 intervals.
 * The height of each bar shows how many values fall into that interval.
 
-````
 
-## Bar Chart
-
-```python
-categories = ['A', 'B', 'C']
-values = [5, 7, 3]
-
-plt.bar(categories, values)
-plt.show()
-````
 
 ## Histogram
 
@@ -206,37 +225,4 @@ data = np.random.randn(1000)
 
 plt.hist(data, bins=30, color='green')
 plt.show()
-```
-
-## Saving Figures with `savefig`
-
-You can save a plot to a file instead of (or in addition to) displaying it:
-
-```python
-plt.plot(x, y, label="Line")
-plt.grid(True)
-plt.legend()
-
-# Save as PNG in the current directory
-plt.savefig("my_plot.png")
-
-# Save with higher resolution and tight layout
-plt.savefig("my_plot_highres.png", dpi=300, bbox_inches='tight')
-
-# Save in vector formats
-plt.savefig("my_plot.pdf")
-plt.savefig("my_plot.svg")
-
-# Finally display on screen
-plt.show()
-```
-
-Tips:
-
-* Call `savefig` **before** `plt.show()` when writing scripts (in some environments, after show the figure closes)
-* `bbox_inches='tight'` removes unnecessary whitespace
-* `transparent=True` saves with transparent background (useful for slides and presentations)
-
-```python
-plt.savefig("my_plot_transparent.png", transparent=True)
 ```
