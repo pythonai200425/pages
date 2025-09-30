@@ -231,16 +231,3 @@ plt.show()
 * A histogram shows the **distribution** of continuous data.
 * `bins` splits the data range into intervals (like buckets). Here `bins=30` means 30 intervals.
 * The height of each bar shows how many values fall into that interval.
-
-
-
-## Histogram
-
-```python
-import numpy as np
-
-data = np.random.randn(1000)
-
-plt.hist(data, bins=30, color='green')
-plt.show()
-```
