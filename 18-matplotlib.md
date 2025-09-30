@@ -21,7 +21,7 @@ plt.plot(x, y)
 plt.show()
 ```
 
-<img src="images/ex1.png" style="width: 25%">
+<img src="images/ex1.png" style="width: 30%">
 
 You can add features:
 
@@ -38,7 +38,7 @@ plt.savefig("example_plot.png", dpi=300, bbox_inches='tight')
 plt.show()
 ```
 
-<img src="images/ex2.png" style="width: 25%">
+<img src="images/ex2.png" style="width: 30%">
 
 **Explanation**
 
@@ -63,7 +63,7 @@ ax2.plot(y, x)
 plt.show()
 ```
 
-<img src="images/ex3.png" style="width: 25%">
+<img src="images/ex3.png" style="width: 30%">
 
 **Explanation**
 
@@ -85,7 +85,7 @@ axes[1].plot(y, x)
 plt.show()
 ```
 
-<img src="images/ex4.png" style="width: 25%">
+<img src="images/ex4.png" style="width: 30%">
 
 **Explanation**
 
@@ -120,7 +120,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="images/ex5.png" style="width: 25%">
+<img src="images/ex5.png" style="width: 40%">
 
 **Notes**
 
@@ -162,7 +162,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="images/ex6.png" style="width: 25%">
+<img src="images/ex6.png" style="width: 30%">
 
 Parameters:
 
@@ -179,7 +179,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="images/ex7.png" style="width: 25%">
+<img src="images/ex7.png" style="width: 30%">
 
 ## Scatter Plot
 
@@ -188,7 +188,7 @@ plt.scatter(x, y, color='blue')
 plt.show()
 ```
 
-<img src="images/ex8.png" style="width: 25%">
+<img src="images/ex8.png" style="width: 100%">
 
 **Explanation**
 
@@ -205,7 +205,7 @@ plt.bar(categories, values)
 plt.show()
 ```
 
-<img src="images/ex9.png" style="width: 25%">
+<img src="images/ex9.png" style="width: 30%">
 
 **Explanation**
 
@@ -224,7 +224,7 @@ plt.hist(data, bins=30, color='green')
 plt.show()
 ```
 
-<img src="images/ex10.png" style="width: 25%">
+<img src="images/ex10.png" style="width: 30%">
 
 **Explanation**
 
