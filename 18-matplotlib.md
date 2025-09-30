@@ -9,8 +9,6 @@ The most common module is **pyplot**, often imported as `plt`.
 import matplotlib.pyplot as plt
 ```
 
----
-
 ## Creating Simple Graphs
 
 ```python
@@ -46,8 +44,6 @@ plt.show()
 * `plt.xlim(0, 6)` → sets the x-axis limits between 0 and 6
 * `plt.ylim(0, 12)` → sets the y-axis limits between 0 and 12
 * `plt.show()` → displays the plot window
-
----
 
 ## Creating Multiple Graphs
 
@@ -122,8 +118,6 @@ plt.show()
 * `fig.suptitle` adds a title for the whole grid (the figure)
 * `plt.tight_layout()` improves spacing between subplots
 
----
-
 ## Customizing the Graph
 
 ```python
@@ -137,8 +131,6 @@ Parameters:
 * **lw** → line width
 * **linestyle** → `-`, `--`, `:`, `-.`
 
----
-
 ## Drawing Two Graphs in the Same Axis
 
 ```python
@@ -147,8 +139,6 @@ plt.plot(x, [i**2 for i in x], label="Line 2")
 plt.legend()
 plt.show()
 ```
-
----
 
 ## Scatter Plot
 
@@ -161,8 +151,6 @@ plt.show()
 
 * A scatter plot shows individual data points as markers.
 * Useful for showing **relationships** or **correlations** between two variables.
-
----
 
 ## Bar Chart
 
@@ -179,8 +167,6 @@ plt.show()
 * A bar chart compares values across a few **categories**.
 * Each bar’s height represents the value for that category.
 * Great for **discrete comparisons** (e.g., sales by product).
-
----
 
 ## Histogram
 
@@ -201,8 +187,6 @@ plt.show()
 
 ````
 
----
-
 ## Bar Chart
 
 ```python
@@ -212,8 +196,6 @@ values = [5, 7, 3]
 plt.bar(categories, values)
 plt.show()
 ````
-
----
 
 ## Histogram
 
@@ -225,8 +207,6 @@ data = np.random.randn(1000)
 plt.hist(data, bins=30, color='green')
 plt.show()
 ```
-
----
 
 ## Saving Figures with `savefig`
 
