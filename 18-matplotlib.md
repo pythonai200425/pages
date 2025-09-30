@@ -38,6 +38,8 @@ plt.savefig("example_plot.png", dpi=300, bbox_inches='tight')
 plt.show()
 ```
 
+<img src="images/ex2.png" style="width: 25%">
+
 **Explanation**
 
 * `plt.plot(x, y)` → draws a line connecting the (x, y) points
@@ -61,6 +63,8 @@ ax2.plot(y, x)
 plt.show()
 ```
 
+<img src="images/ex3.png" style="width: 25%">
+
 **Explanation**
 
 * `fig = plt.figure()` → creates a new, empty figure canvas to draw on
@@ -80,6 +84,8 @@ axes[1].plot(y, x)
 
 plt.show()
 ```
+
+<img src="images/ex4.png" style="width: 25%">
 
 **Explanation**
 
@@ -113,6 +119,8 @@ fig.suptitle("2×2 Subplots Grid")
 plt.tight_layout()
 plt.show()
 ```
+
+<img src="images/ex5.png" style="width: 25%">
 
 **Notes**
 
@@ -154,6 +162,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+<img src="images/ex6.png" style="width: 25%">
+
 Parameters:
 
 * **marker** → shape of points (e.g., `o`, `s`, `^`)
@@ -169,12 +179,16 @@ plt.legend()
 plt.show()
 ```
 
+<img src="images/ex7.png" style="width: 25%">
+
 ## Scatter Plot
 
 ```python
 plt.scatter(x, y, color='blue')
 plt.show()
 ```
+
+<img src="images/ex8.png" style="width: 25%">
 
 **Explanation**
 
@@ -190,6 +204,8 @@ values = [5, 7, 3]
 plt.bar(categories, values)
 plt.show()
 ```
+
+<img src="images/ex9.png" style="width: 25%">
 
 **Explanation**
 
@@ -207,6 +223,8 @@ data = np.random.randn(1000)
 plt.hist(data, bins=30, color='green')
 plt.show()
 ```
+
+<img src="images/ex10.png" style="width: 25%">
 
 **Explanation**
 
