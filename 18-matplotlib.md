@@ -188,7 +188,7 @@ plt.scatter(x, y, color='blue')
 plt.show()
 ```
 
-<img src="images/ex8.png" style="width: 80%">
+<img src="images/ex8.png" style="width: 60%">
 
 **Explanation**
 
